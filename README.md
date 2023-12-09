@@ -32,4 +32,17 @@ https://images.linuxcontainers.org/images
 ## ZeroRootfs 签名文件(与ZeroTermux和Utermux共用同一个签名)
 https://github.com/hanxinhao000/Termux-app-UpgradedVersion/tree/master/%E7%AD%BE%E5%90%8D%E6%96%87%E4%BB%B6
 
+开源项目以及其依赖项目。
+
+### LICENSE 
+
+```
+Copyright [2020] molihuan
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
 
