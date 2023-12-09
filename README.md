@@ -16,6 +16,11 @@
 - [ ] 容器功能支持
 - [ ] pulseaudio 支持
 - [ ] 更多proot版本工具
+- [ ] Chroot容器支持
+
+
+## 一些问题
+1.如果无法启动，请拒绝root权限，或打开调试模式手动输入 startrootfs.sh
       
 ## 下载自己的ROOTFS
 在此网站下载属于你自己的rootfs
