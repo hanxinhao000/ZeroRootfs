@@ -11,7 +11,8 @@
 - [ ] 容器功能支持
 - [ ] pulseaudio 支持
 - [ ] 更多proot版本工具
-#下载自己的ROOTFS
+      
+## 下载自己的ROOTFS
 在此网站下载属于你自己的rootfs
 https://images.linuxcontainers.org/images
 然后放于自己能找到的内部存储目录
