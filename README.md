@@ -17,3 +17,6 @@
 https://images.linuxcontainers.org/images
 然后放于自己能找到的内部存储目录
 点击 开始安装 体验吧
+
+## ZeroRootfs 签名文件(与ZeroTermux和Utermux共用同一个签名)
+https://github.com/hanxinhao000/Termux-app-UpgradedVersion/tree/master/%E7%AD%BE%E5%90%8D%E6%96%87%E4%BB%B6
