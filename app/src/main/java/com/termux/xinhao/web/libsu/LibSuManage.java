@@ -32,7 +32,7 @@ public class LibSuManage {
     private static final String BASHRC_TERMUX_SH_TGZ_FILE = TermuxConstants.TERMUX_HOME_DIR_PATH + "/startrootfs.sh";
     private static final String BASHRC_TERMUX_PROOT_FILE = BASHRC_TERMUX_PROOT_DIR_FILE + "/assets.zip";
     private static final String BASHRC_TERMUX_BUSYBOX_FILE = BASHRC_TERMUX_PROOT_DIR_FILE + "/busybox";
-    private static final String BASHRC_TERMUX_RESOLV_TGZ_FILE = TermuxConstants.TERMUX_HOME_DIR_PATH + "/ubuntu-fs/etc/resolv.conf";
+    private static final String BASHRC_TERMUX_RESOLV_TGZ_FILE = TermuxConstants.TERMUX_HOME_DIR_PATH + "/rootfs-fs/etc/resolv.conf";
     ///data/data/com.xinhao.web.services/files/home/ubuntu-fs/etc/resolv.conf
 
     private int cunt = 0;
