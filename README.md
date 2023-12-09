@@ -2,7 +2,7 @@
 此版本目前是不稳定版本
 
 
-<img src="https://github.com/hanxinhao000/ZeroRootfs/blob/main/png/Screenshot_20231209-183533_ZeroRootfs.png" height="720" width="360"><img src="https://github.com/hanxinhao000/ZeroRootfs/blob/main/png/Screenshot_20231209-183533_ZeroRootfs.png"  height="720" width="360">
+<img src="https://github.com/hanxinhao000/ZeroRootfs/blob/main/png/Screenshot_20231209-183533_ZeroRootfs.png" height="720" width="360"><img src="https://github.com/hanxinhao000/ZeroRootfs/blob/main/png/Screenshot_20231209-183641_ZeroRootfs.png"  height="720" width="360">
 
 
 ##目前支持功能
