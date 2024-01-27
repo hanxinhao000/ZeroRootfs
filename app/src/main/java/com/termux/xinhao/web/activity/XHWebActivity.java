@@ -40,10 +40,13 @@ import com.termux.xinhao.web.sh.ZRShell;
 import com.termux.xinhao.web.utils.UUtils;
 import com.xinhao.web.services.R;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -344,7 +347,8 @@ public class XHWebActivity extends AppCompatActivity implements LibSuManage.Time
         LibSuManage.getInstall().shellCommandExec("unzip_rootfs");
 
         //######################6.写入启动脚本
-        ZRShell.initStartRootfs();
+        String[] assetsStartRootfs = getAssetsStartRootfs();
+        ZRShell.initStartRootfs(assetsStartRootfs);
         writerShellSh(ZRShell.startRootfs, ZRFileUrl.startRootfs);
         LibSuManage.getInstall().shellCommandExec("unzip_start_rootfs");
         //######################7.写入hosts文件，不然无法上网
@@ -356,6 +360,25 @@ public class XHWebActivity extends AppCompatActivity implements LibSuManage.Time
         isRunThread = false;
         //######################8.程序所有工作已经完成...
     }
+
+    //读取assets文件
+    private String[] getAssetsStartRootfs() {
+        try {
+            ArrayList<String> arrayList = new ArrayList<>();
+            InputStreamReader inputReader = new InputStreamReader( getResources().getAssets().open("startrootfs.sh") );
+            BufferedReader bufReader = new BufferedReader(inputReader);
+            String line="";
+            String Result="";
+            while((line = bufReader.readLine()) != null) {
+                arrayList.add(line);
+            }
+            return arrayList.toArray(new String[]{});
+        } catch (IOException e) {
+           e.printStackTrace();
+        }
+        return new String[]{};
+    }
+
     private void writerShellSh(String[] sh, String filePath) {
         File file = new File(filePath);
         try {

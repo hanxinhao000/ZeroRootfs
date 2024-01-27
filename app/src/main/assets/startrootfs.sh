@@ -1,11 +1,9 @@
-#!/system/bin/sh
-rootDir="com.xinhao.web.services"
-cd /data/data/$rootDir/files/home
+########### 此处填写启动文件
 export PROOT_TMP_DIR="tmp"
     command="../bin/proot"
     command+=" --link2symlink"
     command+=" -0"
-    command+=" -r ubuntu-fs"
+    command+=" -r rootfs-fs"
     if [ -n "$(ls -A binds)" ]; then
         for f in binds/* ;do
           . $f
@@ -13,7 +11,7 @@ export PROOT_TMP_DIR="tmp"
     fi
     command+=" -b /dev"
     command+=" -b /proc"
-    command+=" -b ubuntu-fs/root:/dev/shm"
+    command+=" -b rootfs-fs/root:/dev/shm"
     ## uncomment the following line to have access to the home directory of termux
     #command+=" -b /data/data/com.termux/files/home:/root"
     ## uncomment the following line to mount /sdcard directly to /

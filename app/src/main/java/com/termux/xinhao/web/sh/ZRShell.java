@@ -3,6 +3,8 @@ package com.termux.xinhao.web.sh;
 import com.termux.xinhao.web.utils.UUtils;
 import com.xinhao.web.services.R;
 
+import java.util.ArrayList;
+
 public class ZRShell {
     public static String packageName;
     public static String container = "files";
@@ -58,37 +60,19 @@ public class ZRShell {
             cmd,
         };
     }
-    public static void initStartRootfs() {
+    public static void initStartRootfs(String[] command) {
         packageName = UUtils.getContext().getPackageName();
-        startRootfs = new String[] {
+        String[] head = new String[] {
             "#!/system/bin/sh",
-            "export PROOT_TMP_DIR=\"tmp\"",
             "cd /data/data/" + packageName +"/" + container + "/home/",
-            "    command=\"../bin/proot\"",
-            "    command+=\" --link2symlink\"",
-            "    command+=\" -0\"",
-            "    command+=\" -r rootfs-fs\"",
-            "    if [ -n \"$(ls -A binds)\" ]; then",
-            "        for f in binds/* ;do",
-            "          . $f",
-            "        done",
-            "    fi",
-            "    command+=\" -b /dev\"",
-            "    command+=\" -b /proc\"",
-            "    command+=\" -b rootfs-fs/root:/dev/shm\"",
-            "    ## uncomment the following line to have access to the home directory of termux",
-            "    #command+=\" -b /data/data/com.termux/files/home:/root\"",
-            "    ## uncomment the following line to mount /sdcard directly to /",
-            "    command+=\" -b /sdcard\"",
-            "    command+=\" -w /root\"",
-            "    command+=\" /usr/bin/env -i\"",
-            "    command+=\" HOME=/root\"",
-            "    command+=\" PATH=/usr/local/sbin:/usr/local/bin:/bin:/usr/bin:/sbin:/usr/sbin:/usr/games:/usr/local/games\"",
-            "    command+=\" TERM=$TERM\"",
-            "    command+=\" LANG=C.UTF-8\"",
-            "    command+=\" /bin/bash --login\"",
-            "    com=\"$@\"",
-            "    exec $command",
         };
+        ArrayList<String> arrayList = new ArrayList<>();
+        for (int i = 0; i < head.length; i++) {
+            arrayList.add(head[i]);
+        }
+        for (int i = 0; i < command.length; i++) {
+            arrayList.add(command[i]);
+        }
+        startRootfs = arrayList.toArray(new String[]{});
     }
 }
