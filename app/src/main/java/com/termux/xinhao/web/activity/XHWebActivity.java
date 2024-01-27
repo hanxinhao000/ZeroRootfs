@@ -34,6 +34,7 @@ import com.molihuan.pathselector.utils.Mtools;
 import com.termux.app.TermuxActivity;
 import com.termux.shared.zerorootfs.UserSetManage;
 import com.termux.shared.zerorootfs.bean.ZTUserBean;
+import com.termux.x11.MainActivity;
 import com.termux.xinhao.web.ZRFileUrl;
 import com.termux.xinhao.web.libsu.LibSuManage;
 import com.termux.xinhao.web.sh.ZRShell;
@@ -96,7 +97,7 @@ public class XHWebActivity extends AppCompatActivity implements LibSuManage.Time
             @Override
             public void onClick(View v) {
                 UUtils.showMsg(UUtils.getString(R.string.debug));
-               // startActivity(new Intent(XHWebActivity.this, SwitchActivity.class));
+                startActivity(new Intent(XHWebActivity.this, MainActivity.class));
             }
         });
         try {

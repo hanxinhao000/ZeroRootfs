@@ -1,3 +1,5 @@
 include ':app', ':termux-shared', ':terminal-emulator', ':terminal-view'
 include ':zxing'
 include ':xh_lib'
+include ':shell-loader'
+include ':shell-loader:stub'

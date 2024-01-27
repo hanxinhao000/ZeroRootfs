@@ -129,9 +129,8 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
     /**
      * The terminal extra keys view.
      */
-    ExtraKeysView mExtraKeysView;
-
-    /**
+    com.termux.shared.termux.extrakeys.ExtraKeysView mExtraKeysView;
+    /**com.termux.shared.termux.extrakeys.ExtraKeysView
      * The client for the {@link #mExtraKeysView}.
      */
     TermuxTerminalExtraKeys mTermuxTerminalExtraKeys;
@@ -992,7 +991,7 @@ public final class TermuxActivity extends AppCompatActivity implements ServiceCo
             reloadProperties();
 
             if (mExtraKeysView != null) {
-                mExtraKeysView.setButtonTextAllCaps(mProperties.shouldExtraKeysTextBeAllCaps());
+               // mExtraKeysView.setButtonTextAllCaps(mProperties.shouldExtraKeysTextBeAllCaps());
                 mExtraKeysView.reload(mTermuxTerminalExtraKeys.getExtraKeysInfo(), mTerminalToolbarDefaultHeight);
             }
 
